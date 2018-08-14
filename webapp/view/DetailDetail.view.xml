@@ -1,0 +1,45 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="com.jonasdp.trac2018.controller.DetailDetail" xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>Common.SalesOrderItems}">
+				<content>
+					<ObjectHeader
+						title="{order>/OrderID}">
+						<attributes>
+							<ObjectAttribute text="{order>/Freight}"/>
+						</attributes>
+					</ObjectHeader>
+					<Table
+						items="{orderItems>/}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{i18n>Common.SalesOrderItems}"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="{i18n>DetailDetail.Table.Item}"/>
+							</Column>
+							<Column>
+								<Text text="{DetailDetail.Table.UnitPrice}"/>
+							</Column>
+							<Column>
+								<Text text="{DetailDetail.Table.Quantity}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier title="{orderItems>ProductID}"/>
+									<Text text="{orderItems>UnitPrice}"/>
+									<Text text="{orderItems>Quantity}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

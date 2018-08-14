@@ -1,0 +1,56 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="com.jonasdp.trac2018.controller.Detail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<App>
+		<pages>
+			<Page title="{i18n>Common.SalesOrders}">
+				<content>
+					<ObjectHeader
+						title="{customer>/CompanyName}"
+						icon="sap-icon://customer">
+						<attributes>
+							<ObjectAttribute text="{customer>/City}"/>
+							<ObjectAttribute text="{customer>/Country}"/>
+							<ObjectAttribute text="{customer>/CustomerID}"/>
+						</attributes>
+					</ObjectHeader>
+					<Table
+						items="{orders>/}"
+						mode="SingleSelectMaster"
+						selectionChange="onOrderPress">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{i18n>Common.SalesOrders}"/>
+								<ToolbarSpacer/>
+								<Button type="Emphasized" icon="sap-icon://add" text="{i18n>Detail.Button.NewSalesOrder}"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="{i18n>Detail.Table.SalesOrderNumber}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>Detail.Table.PONumber}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>Detail.Table.DeliveryDate}"/>
+							</Column>
+							<Column>
+								<Text text="{i18n>Detail.Table.Value}"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier title="{orders>OrderID}"/>
+									<Text text="{orders>EmployeeID}"/>
+									<Text text="{path: 'orders>RequiredDate', formatter: '.formatter.formatDate'}"/>
+									<Text text="{orders>Freight}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
