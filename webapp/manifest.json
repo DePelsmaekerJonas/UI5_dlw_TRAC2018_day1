@@ -117,35 +117,11 @@
 				"viewPath": "com.jonasdp.trac2018.view",
 				"controlId": "idAppControl"
 			},
-			"routes": [{
-				"name": "Master",
-				"pattern": "",
-				"target": "Master"
-			}, {
-				"name": "Detail",
-				"pattern": "customer/{customerID}",
-				"target": ["Master", "Detail"]
-			}, {
-				"name": "DetailDetail",
-				"pattern": "customer/{customerID}/order/{orderID}",
-				"target": ["Master", "Detail", "DetailDetail"]
-			}],
+			"routes": [
+			
+			],
 			"targets": {
-				"Master": {
-					"viewType": "XML",
-					"viewName": "Master",
-					"controlAggregation": "beginColumnPages"
-				},
-				"Detail": {
-					"viewType": "XML",
-					"viewName": "Detail",
-					"controlAggregation": "midColumnPages"
-				},
-				"DetailDetail": {
-					"viewType": "XML",
-					"viewName": "DetailDetail",
-					"controlAggregation": "endColumnPages"
-				}
+				
 			}
 		}
 	}
