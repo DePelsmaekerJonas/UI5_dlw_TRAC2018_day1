@@ -70,38 +70,6 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"settings": {},
 				"preload": false
-			},
-			"": {
-				"uri": "/Northwind/V2/Northwind/Northwind.svc/",
-				"type": "sap.ui.model.odata.v2.ODataModel",
-				"settings": {
-					"defaultOperationMode": "Server",
-					"defaultBindingMode": "OneWay",
-					"defaultCountMode": "Request",
-					"useBatch": false
-				},
-				"dataSource": "Northwind.svc",
-				"preload": true
-			},
-			"orders": {
-				"type": "sap.ui.model.json.JSONModel",
-				"settings": {},
-				"preload": false
-			},
-			"customer": {
-				"type": "sap.ui.model.json.JSONModel",
-				"settings": {},
-				"preload": false
-			},
-			"order": {
-				"type": "sap.ui.model.json.JSONModel",
-				"settings": {},
-				"preload": false
-			},
-			"orderItems": {
-				"type": "sap.ui.model.json.JSONModel",
-				"settings": {},
-				"preload": false
 			}
 		},
 		"resources": {
