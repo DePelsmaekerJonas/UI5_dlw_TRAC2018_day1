@@ -15,6 +15,7 @@ sap.ui.define([
 		
 		_onRoutingMatched: function(oEvent){
 			this.getView().setBusy(true);
+			
 			var that = this;
 			
 			var aFilters = [new Filter("CustomerID", sap.ui.model.FilterOperator.EQ, oEvent.getParameter("arguments").customerID)];

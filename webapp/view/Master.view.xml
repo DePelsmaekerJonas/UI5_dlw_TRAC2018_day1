@@ -11,10 +11,15 @@
 						id="idCustomerList"
 						items="{/Customers}">
 						<items>
-							<StandardListItem
+							<ObjectListItem
 								title="{CompanyName}"
 								type="Navigation"
-								press="onCustomerPress"/>
+								press="onCustomerPress">
+								<attributes>
+									<ObjectAttribute text="{City}"/>
+									<ObjectAttribute text="{Country}"/>
+								</attributes>
+							</ObjectListItem>
 						</items>
 					</List>
 				</content>
