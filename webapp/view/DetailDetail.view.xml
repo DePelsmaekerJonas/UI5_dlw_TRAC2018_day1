@@ -22,10 +22,10 @@
 								<Text text="{i18n>DetailDetail.Table.Item}"/>
 							</Column>
 							<Column>
-								<Text text="{DetailDetail.Table.UnitPrice}"/>
+								<Text text="{i18n>DetailDetail.Table.UnitPrice}"/>
 							</Column>
 							<Column>
-								<Text text="{DetailDetail.Table.Quantity}"/>
+								<Text text="{i18n>DetailDetail.Table.Quantity}"/>
 							</Column>
 						</columns>
 						<items>
