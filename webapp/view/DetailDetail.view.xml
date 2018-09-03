@@ -22,18 +22,18 @@
 								<Text text="{i18n>DetailDetail.Table.Item}"/>
 							</Column>
 							<Column>
-								<Text text="{i18n>DetailDetail.Table.UnitPrice}"/>
+								<Text text="{i18n>DetailDetail.Table.Quantity}"/>
 							</Column>
 							<Column>
-								<Text text="{i18n>DetailDetail.Table.Quantity}"/>
+								<Text text="{i18n>DetailDetail.Table.UnitPrice}"/>
 							</Column>
 						</columns>
 						<items>
 							<ColumnListItem>
 								<cells>
-									<ObjectIdentifier title="{orderItems>ProductID}"/>
-									<Text text="{orderItems>UnitPrice}"/>
-									<Text text="{orderItems>Quantity}"/>
+									<ObjectIdentifier title="{orderItems>MaterialNumber}"/>
+									<Text text="{orderItems>OrderQuantity}"/>
+									<Text text="{orderItems>TargetUOM}"/>
 								</cells>
 							</ColumnListItem>
 						</items>

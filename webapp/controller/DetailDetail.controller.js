@@ -1,7 +1,6 @@
 sap.ui.define([
-	"com/jonasdp/trac2018/controller/BaseController",
-	"sap/ui/model/Filter"
-], function (BaseController, Filter) {
+	"com/jonasdp/trac2018/controller/BaseController"
+], function (BaseController) {
 	"use strict";
 
 	return BaseController.extend("com.jonasdp.trac2018.controller.DetailDetail", {
@@ -14,12 +13,14 @@ sap.ui.define([
 			this.getView().setBusy(true);
 			var that = this;
 			
-			var aFilters = [new Filter("OrderID", sap.ui.model.FilterOperator.EQ, oEvent.getParameter("arguments").orderID)];
+			var sOrderId = oEvent.getParameter("arguments").orderID;
 			
-			this.getModel().read("/Order_Details", {
-				filters: aFilters,
+			this.getModel("orderItemsModel").read("/OrderSet(SalesDocument='" + sOrderId + "')", {
+				urlParameters: {
+					$expand: "NavOrderItems"
+				},
 				success: function(oData){
-					that.getModel("orderItems").setData(oData.results);
+					that.getModel("orderItems").setData(oData.NavOrderItems.results);
 				},
 				error: function(oError){
 					that.showError(oError);

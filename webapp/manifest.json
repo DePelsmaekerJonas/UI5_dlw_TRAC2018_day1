@@ -37,6 +37,14 @@
 					"odataVersion": "2.0",
 					"localUri": "localService/ZV_ZVT18_ORDERS_JVN_CDS/metadata.xml"
 				}
+			},
+			"ZGW_CUSTOMER_360_DLW_SRV": {
+				"uri": "/sap/opu/odata/sap/ZGW_CUSTOMER_360_DLW_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZGW_CUSTOMER_360_DLW_SRV/metadata.xml"
+				}
 			}
 		}
 	},
@@ -130,6 +138,18 @@
 					"defaultCountMode": "Request"
 				},
 				"dataSource": "ZV_ZVT18_ORDERS_JVN_CDS",
+				"preload": true
+			},
+			"orderItemsModel": {
+				"uri": "/sap/opu/odata/sap/ZGW_CUSTOMER_360_DLW_SRV/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request",
+					"useBatch": false
+				},
+				"dataSource": "ZGW_CUSTOMER_360_DLW_SRV",
 				"preload": true
 			}
 		},
