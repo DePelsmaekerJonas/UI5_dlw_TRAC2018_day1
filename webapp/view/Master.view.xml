@@ -9,15 +9,15 @@
 				<content>
 					<List
 						id="idCustomerList"
-						items="{/Customers}">
+						items="{/ZV_ZVT18_CUSTM_JVN}">
 						<items>
 							<ObjectListItem
-								title="{CompanyName}"
+								title="{name}"
 								type="Navigation"
 								press="onCustomerPress">
 								<attributes>
-									<ObjectAttribute text="{City}"/>
-									<ObjectAttribute text="{Country}"/>
+									<ObjectAttribute text="{city}"/>
+									<ObjectAttribute text="{country}"/>
 								</attributes>
 							</ObjectListItem>
 						</items>

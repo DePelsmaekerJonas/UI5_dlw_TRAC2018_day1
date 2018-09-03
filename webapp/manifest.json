@@ -21,6 +21,14 @@
 					"odataVersion": "2.0",
 					"localUri": "localService/metadata.xml"
 				}
+			},
+			"ZV_ZVT18_CUSTM_JVN_CDS": {
+				"uri": "/sap/opu/odata/sap/ZV_ZVT18_CUSTM_JVN_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZV_ZVT18_CUSTM_JVN_CDS/metadata.xml"
+				}
 			}
 		}
 	},
@@ -71,24 +79,7 @@
 				"settings": {},
 				"preload": false
 			},
-			"": {
-				"uri": "/Northwind/V2/Northwind/Northwind.svc/",
-				"type": "sap.ui.model.odata.v2.ODataModel",
-				"settings": {
-					"defaultOperationMode": "Server",
-					"defaultBindingMode": "OneWay",
-					"defaultCountMode": "Request",
-					"useBatch": false
-				},
-				"dataSource": "Northwind.svc",
-				"preload": true
-			},
 			"orders": {
-				"type": "sap.ui.model.json.JSONModel",
-				"settings": {},
-				"preload": false
-			},
-			"customer": {
 				"type": "sap.ui.model.json.JSONModel",
 				"settings": {},
 				"preload": false
@@ -102,6 +93,22 @@
 				"type": "sap.ui.model.json.JSONModel",
 				"settings": {},
 				"preload": false
+			},
+			"customer": {
+				"type": "sap.ui.model.json.JSONModel",
+				"settings": {},
+				"preload": false
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"uri": "/sap/opu/odata/sap/ZV_ZVT18_CUSTM_JVN_CDS/",
+				"dataSource": "ZV_ZVT18_CUSTM_JVN_CDS",
+				"preload": true
 			}
 		},
 		"resources": {

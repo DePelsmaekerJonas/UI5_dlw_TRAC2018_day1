@@ -13,21 +13,21 @@ sap.ui.define([
 			var aFilters = [];
 			var sQuery = oEvent.getSource().getValue();
 			if (sQuery && sQuery.length > 0) {
-				var filter = new Filter("CompanyName", sap.ui.model.FilterOperator.Contains, sQuery);
+				var filter = new Filter("name", sap.ui.model.FilterOperator.Contains, sQuery);
 				aFilters.push(filter);
 			}
 
 			// update list binding
 			var list = this.byId("idCustomerList");
 			var binding = list.getBinding("items");
-			binding.filter(aFilters, "CompanyName");
+			binding.filter(aFilters, "name");
 			
 			this.getView().setBusy(false);
 		},
 		
 		onCustomerPress: function(oEvent){
 			this.getModel("customer").setData(oEvent.getSource().getBindingContext().getObject()); 
-			var sCustId = this.getModel("customer").getProperty("/CustomerID");
+			var sCustId = this.getModel("customer").getProperty("/CustomerNumber");
 			this.getRouter().navTo("Detail", {
 				customerID: sCustId
 			});
