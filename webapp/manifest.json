@@ -29,6 +29,14 @@
 					"odataVersion": "2.0",
 					"localUri": "localService/ZV_ZVT18_CUSTM_JVN_CDS/metadata.xml"
 				}
+			},
+			"ZV_ZVT18_ORDERS_JVN_CDS": {
+				"uri": "/sap/opu/odata/sap/ZV_ZVT18_ORDERS_JVN_CDS/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/ZV_ZVT18_ORDERS_JVN_CDS/metadata.xml"
+				}
 			}
 		}
 	},
@@ -47,7 +55,10 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_belize"]
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
 	},
 	"sap.ui5": {
 		"rootView": {
@@ -109,12 +120,25 @@
 				"uri": "/sap/opu/odata/sap/ZV_ZVT18_CUSTM_JVN_CDS/",
 				"dataSource": "ZV_ZVT18_CUSTM_JVN_CDS",
 				"preload": true
+			},
+			"ordersModel": {
+				"uri": "/sap/opu/odata/sap/ZV_ZVT18_ORDERS_JVN_CDS/",
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZV_ZVT18_ORDERS_JVN_CDS",
+				"preload": true
 			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -124,19 +148,30 @@
 				"viewPath": "com.jonasdp.trac2018.view",
 				"controlId": "idAppControl"
 			},
-			"routes": [{
-				"name": "Master",
-				"pattern": "",
-				"target": "Master"
-			}, {
-				"name": "Detail",
-				"pattern": "customer/{customerID}",
-				"target": ["Master", "Detail"]
-			}, {
-				"name": "DetailDetail",
-				"pattern": "customer/{customerID}/order/{orderID}",
-				"target": ["Master", "Detail", "DetailDetail"]
-			}],
+			"routes": [
+				{
+					"name": "Master",
+					"pattern": "",
+					"target": "Master"
+				},
+				{
+					"name": "Detail",
+					"pattern": "customer/{customerID}",
+					"target": [
+						"Master",
+						"Detail"
+					]
+				},
+				{
+					"name": "DetailDetail",
+					"pattern": "customer/{customerID}/order/{orderID}",
+					"target": [
+						"Master",
+						"Detail",
+						"DetailDetail"
+					]
+				}
+			],
 			"targets": {
 				"Master": {
 					"viewType": "XML",

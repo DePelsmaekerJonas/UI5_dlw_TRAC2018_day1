@@ -5,12 +5,12 @@
 			<Page title="{i18n>Common.SalesOrders}">
 				<content>
 					<ObjectHeader
-						title="{customer>/CompanyName}"
+						title="{customer>/name}"
 						icon="sap-icon://customer">
 						<attributes>
-							<ObjectAttribute text="{customer>/City}"/>
-							<ObjectAttribute text="{customer>/Country}"/>
-							<ObjectAttribute text="{customer>/CustomerID}"/>
+							<ObjectAttribute text="{customer>/city}"/>
+							<ObjectAttribute text="{customer>/country}"/>
+							<ObjectAttribute text="{customer>/CustomerNumber}"/>
 						</attributes>
 					</ObjectHeader>
 					<Table
@@ -41,10 +41,10 @@
 						<items>
 							<ColumnListItem>
 								<cells>
-									<ObjectIdentifier title="{orders>OrderID}"/>
-									<Text text="{orders>EmployeeID}"/>
-									<Text text="{path: 'orders>RequiredDate', formatter: '.formatter.formatDate'}"/>
-									<Text text="{orders>Freight}"/>
+									<ObjectIdentifier title="{orders>Id}"/>
+									<Text text="{orders>OrderNumber}"/>
+									<Text text="{path: 'orders>RequestedDeliveryDate', formatter: '.formatter.formatDate'}"/>
+									<Text text="{orders>NetValue}"/>
 								</cells>
 							</ColumnListItem>
 						</items>

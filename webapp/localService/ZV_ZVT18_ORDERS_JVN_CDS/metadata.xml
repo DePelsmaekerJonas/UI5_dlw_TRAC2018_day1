@@ -1,0 +1,16 @@
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference Uri="./IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='ERP')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZV_ZVT18_ORDERS_JVN_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZV_ZVT18_ORDERS_JVNType" sap:label="Order list" sap:content-version="1">
+				<Key><PropertyRef Name="OrderNumber"/></Key><Property Name="OrderNumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Po number"
+					sap:quickinfo="Sales Document"/><Property Name="Id" Type="Edm.String" MaxLength="20" sap:label="Id" sap:quickinfo="Customer Reference"/><Property Name="RequestedDeliveryDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Requested delivery date"
+					sap:quickinfo="Requested Delivery Date"/><Property Name="NetValue" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="Currency" sap:label="Net value"
+					sap:quickinfo="Net Value of the Sales Order in Document Currency"/><Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:quickinfo="SD document currency"
+					sap:semantics="currency-code"/><Property Name="customer" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Customer" sap:quickinfo="Sold-to party"/></EntityType>
+			<EntityContainer Name="ZV_ZVT18_ORDERS_JVN_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZV_ZVT18_ORDERS_JVN" EntityType="ZV_ZVT18_ORDERS_JVN_CDS.ZV_ZVT18_ORDERS_JVNType" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:content-version="1"/></EntityContainer><atom:link rel="self" href="./sap/ZV_ZVT18_ORDERS_JVN_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="./sap/ZV_ZVT18_ORDERS_JVN_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

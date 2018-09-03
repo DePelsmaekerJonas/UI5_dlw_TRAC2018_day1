@@ -18,9 +18,9 @@ sap.ui.define([
 			
 			var that = this;
 			
-			var aFilters = [new Filter("CustomerID", sap.ui.model.FilterOperator.EQ, oEvent.getParameter("arguments").customerID)];
+			var aFilters = [new Filter("customer", sap.ui.model.FilterOperator.EQ, oEvent.getParameter("arguments").customerID)];
 			
-			this.getModel().read("/Orders", {
+			this.getModel("ordersModel").read("/ZV_ZVT18_ORDERS_JVN", {
 				filters: aFilters,
 				success: function(oData){
 					that.getModel("orders").setData(oData.results);
@@ -35,8 +35,8 @@ sap.ui.define([
 		
 		onOrderPress: function(oEvent){
 			this.getModel("order").setData(oEvent.getSource().getSelectedItem().getBindingContext("orders").getObject());
-			var sCustId = this.getModel("customer").getProperty("/CustomerID");
-			var sOrderId = this.getModel("order").getProperty("/OrderID");
+			var sCustId = this.getModel("customer").getProperty("/CustomerNumber");
+			var sOrderId = this.getModel("order").getProperty("/OrderNumber");
 			
 			this.getRouter().navTo("DetailDetail", {
 				customerID: sCustId,
